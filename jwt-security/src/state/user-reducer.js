@@ -6,7 +6,6 @@ const SET_CURRENT_USER = "SET_CURRENT_USER"
 const emptyUser = {
     username: "",
     role: "",
-    restaurantId: 0,
     isAuth: false
 }
 let initialState = {
@@ -26,11 +25,12 @@ const userReducer = (state = initialState, action) => {
 export const login = (username, password) => {
     return (dispatch) => {
         authApi.login(username, password)
-            .then(() => {
-
+            .then((response) => {
+                dispatch(setCurrentUser({...response.data, isAuth: true}))
             })
             .catch(error => {
-                dispatch(setLoginError(error.response.data));
+                debugger
+                dispatch(setLoginError(error.message));
             });
     };
 }
