@@ -1,16 +1,24 @@
 import {NavLink} from "react-router-dom";
 import classes from "./Header.module.css";
+import LogoutContainer from "../Auth/Logout/LogoutContainer";
 
 const Header = () => {
     return (
         <header className={classes.header}>
             <div className={classes.content_links}>
                 <div className={classes.item}>
-                    <NavLink to={"/profile"}  className={isActive}>Profile</NavLink>
+                    <NavLink to={"/profile"} className={isActive}>Profile</NavLink>
                 </div>
                 <div className={classes.item}>
-                    <NavLink to={"/users"}  className={isActive}>User List</NavLink>
+                    <NavLink to={"/users"} className={isActive}>User List</NavLink>
                 </div>
+                <div className={classes.item}>
+                    <NavLink to="/login" className={isActive}>Логін</NavLink>
+                </div>
+                <div className={classes.item}>
+                    <NavLink to="/registration" className={isActive}>Реєстрація</NavLink>
+                </div>
+                <LogoutContainer/>
             </div>
         </header>
     )
