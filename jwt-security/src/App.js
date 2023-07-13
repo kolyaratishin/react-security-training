@@ -1,10 +1,10 @@
 import './App.css';
 import Header from "./components/Header/Header";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Profile from "./components/Profile/Profile";
 import Users from "./components/Users/Users";
 import LoginContainer from "./components/Auth/Login/LoginContainer";
 import RegistrationContainer from "./components/Auth/Registration/RegistrationContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 function App() {
     return (
@@ -14,7 +14,7 @@ function App() {
                 <div className="app-wrapper-content">
                     <Routes>
                         <Route path="/profile"
-                               element={<Profile/>}/>
+                               element={<ProfileContainer/>}/>
                         <Route path="/users"
                                element={<Users/>}/>
                         <Route path="/login"
