@@ -1,0 +1,29 @@
+.header {
+    background-color: blue;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.header div {
+    display: inline-flex;
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.item a{
+    color: white;
+    text-decoration: none;
+}
+
+.item a.active{
+    color: gold;
+}
+
+.content_links {
+    width: 90%;
+}
+
+.auth_links{
+    width: 10%;
+}
