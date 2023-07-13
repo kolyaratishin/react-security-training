@@ -1,10 +1,10 @@
 import './App.css';
 import Header from "./components/Header/Header";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Users from "./components/Users/Users";
 import LoginContainer from "./components/Auth/Login/LoginContainer";
 import RegistrationContainer from "./components/Auth/Registration/RegistrationContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 function App() {
     return (
@@ -16,7 +16,7 @@ function App() {
                         <Route path="/profile"
                                element={<ProfileContainer/>}/>
                         <Route path="/users"
-                               element={<Users/>}/>
+                               element={<UsersContainer/>}/>
                         <Route path="/login"
                                element={<LoginContainer/>}/>
                         <Route path="/registration"

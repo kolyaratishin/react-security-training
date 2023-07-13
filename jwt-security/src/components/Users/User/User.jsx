@@ -1,13 +1,14 @@
 import classes from "./User.module.css";
 
-const User = () => {
+const User = (props) => {
     return (
         <div>
             <div className={classes.container}>
                 <div className={classes.profile}>
-                    <h2>Ім'я Користувача</h2>
-                    <p>Email: user@example.com</p>
+                    <h2>{props.user.username}</h2>
+                    <p>Email: {props.user.email}</p>
                     <p>Місто: Місто Користувача</p>
+                    <p>Role: {props.user.role}</p>
                 </div>
             </div>
         </div>

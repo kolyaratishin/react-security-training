@@ -1,7 +1,8 @@
-import {authApi} from "../api/api";
+import {authApi, userApi} from "../api/api";
 import {setLoginError} from "./error-reducer";
 
 const SET_CURRENT_USER = "SET_CURRENT_USER"
+const SET_USER_LIST = "SET_USER_LIST"
 
 const emptyUser = {
     username: "",
@@ -9,13 +10,17 @@ const emptyUser = {
     isAuth: false
 }
 let initialState = {
-    currentUser: emptyUser
+    currentUser: emptyUser,
+    usersList: []
 }
 
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_CURRENT_USER: {
             return {...state, currentUser: {...action.user}}
+        }
+        case SET_USER_LIST: {
+            return {...state, usersList: [...action.users]}
         }
         default:
             return state;
@@ -29,10 +34,22 @@ export const login = (username, password) => {
                 dispatch(setCurrentUser({...response.data, isAuth: true}))
             })
             .catch(error => {
-                debugger
                 dispatch(setLoginError(error.message));
             });
     };
+}
+
+export const getAllUsers = () => {
+    return (dispatch) => {
+        userApi.getAllUsers()
+            .then((response) => {
+                dispatch(setUsersList(response.data))
+            })
+    };
+}
+
+export const setUsersList = (users) => {
+    return {type: SET_USER_LIST, users};
 }
 
 

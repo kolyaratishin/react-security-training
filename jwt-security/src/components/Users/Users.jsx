@@ -1,14 +1,12 @@
 import classes from "./Users.module.css";
 import User from "./User/User";
 
-const Users = () => {
+const Users = (props) => {
     return (
         <div>
             <h1 className={classes.header}>USER LIST</h1>
             <div className={classes.list}>
-                <User/>
-                <User/>
-                <User/>
+                {props.users.map(user => <User user={user}/>)}
             </div>
         </div>
     )

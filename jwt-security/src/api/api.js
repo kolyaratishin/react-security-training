@@ -6,9 +6,7 @@ const authAxiosInstance = axios.create({
 });
 
 const axiosInstance = axios.create({
-    withCredentials: true,
-    baseURL: "http://localhost:8082/api/v1/jwt",
-    Authorization: "Bearer " + localStorage.getItem("jwt")
+    baseURL: "http://localhost:8082/api/v1/user/jwt",
 });
 
 export const authApi = {
@@ -28,5 +26,14 @@ export const authApi = {
             username,
             password
         });
+    },
+}
+
+export const userApi = {
+    getAllUsers() {
+        const headers = {
+            'Authorization': 'Bearer ' + localStorage.getItem("jwt"),
+        };
+        return axiosInstance.get(``, {headers});
     },
 }
