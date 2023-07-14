@@ -27,6 +27,12 @@ export const authApi = {
             password
         });
     },
+    refreshToken(refreshToken) {
+        debugger
+        return authAxiosInstance.post(`/refreshtoken`, {
+            refreshToken,
+        });
+    },
 }
 
 export const userApi = {
