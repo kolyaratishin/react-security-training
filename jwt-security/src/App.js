@@ -1,16 +1,16 @@
 import './App.css';
-import Header from "./components/Header/Header";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import LoginContainer from "./components/Auth/Login/LoginContainer";
 import RegistrationContainer from "./components/Auth/Registration/RegistrationContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 function App() {
     return (
         <BrowserRouter>
             <div className="App">
-                <Header/>
+                <HeaderContainer/>
                 <div className="app-wrapper-content">
                     <Routes>
                         <Route path="/profile"

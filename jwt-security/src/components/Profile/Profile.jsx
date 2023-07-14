@@ -1,6 +1,10 @@
 import classes from "./Profile.module.css";
+import {Navigate} from "react-router-dom";
 
 const Profile = (props) => {
+    if (!props.currentUser.isAuth){
+        return <Navigate to={"/login"}/>
+    }
     return (
         <div>
             <div className={classes.container}>
