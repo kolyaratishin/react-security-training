@@ -10,7 +10,7 @@ class UsersContainer extends Component {
 
     render() {
         return (
-            <Users users={this.props.users}/>
+            <Users users={this.props.users} isAuth={this.props.isAuth}/>
         );
     }
 }
@@ -18,7 +18,8 @@ class UsersContainer extends Component {
 
 function mapStateToProps(state) {
     return {
-        users: state.user.usersList
+        users: state.user.usersList,
+        isAuth: state.user.currentUser.isAuth,
     }
 }
 

@@ -69,6 +69,10 @@ export const getAllUsers = () => {
                             localStorage.setItem("jwt", response.data.token)
                             dispatch(getAllUsers());
                         })
+                        .catch(() => {
+                            dispatch(logout())
+                        })
+
                 }
             })
     };
