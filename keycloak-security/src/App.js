@@ -1,6 +1,7 @@
 import './App.css';
-import {BrowserRouter, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Header from "./components/Header/Header";
+import Profile from "./components/Profile/Profile";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
           <Header/>
           <div className="app-wrapper-content">
             <Routes>
-
+                <Route path="/profile"
+                       element={<Profile/>}/>
             </Routes>
           </div>
         </div>
