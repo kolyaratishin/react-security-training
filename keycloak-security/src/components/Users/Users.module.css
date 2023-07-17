@@ -1,0 +1,9 @@
+.header {
+    text-align: center;
+}
+
+.list {
+    display: inline-flex;
+    margin-right: 50px;
+    margin-top: 10px;
+}
